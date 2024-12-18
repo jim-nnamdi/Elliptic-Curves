@@ -3,11 +3,12 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 typedef struct {
     uint64_t x_point;
     uint64_t y_point;
-    uint64_t **b_points;
+    bool is_infinity;
 } ecc_curves_datapoints;
 
 ecc_curves_datapoints* point_addition(ecc_curves_datapoints* p, ecc_curves_datapoints* q);
