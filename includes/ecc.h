@@ -12,5 +12,6 @@ typedef struct {
 
 ecc_curves_datapoints* point_addition(ecc_curves_datapoints* p, ecc_curves_datapoints* q);
 ecc_curves_datapoints* point_doubling(ecc_curves_datapoints* p, ecc_curves_datapoints* q);
+ecc_curves_datapoints* scalar_multiplication(ecc_curves_datapoints* P, uint64_t k, uint64_t q, uint64_t p);
 
 #endif

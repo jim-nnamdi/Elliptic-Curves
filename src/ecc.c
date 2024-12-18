@@ -23,6 +23,18 @@ ecc_curves_datapoints* point_addition(ecc_curves_datapoints* p, ecc_curves_datap
     return curve_point_doubling;
 }
 
+ecc_curves_datapoints* scalar_multiplication(ecc_curves_datapoints* P, uint64_t k, uint64_t q, uint64_t p) {
+    ecc_curves_datapoints *R = malloc(sizeof(ecc_curves_datapoints));
+    ecc_curves_datapoints *Q = P; 
+    while (k > 0){
+        if (k & 1) 
+            R = point_addition(R, P);
+        Q = point_addition(Q,P);
+        k >>= 1;
+    }
+    return R;
+}
+
 uint64_t modular_point_addition(uint64_t x, uint64_t y, uint64_t p) {
     uint64_t modular_result = x + y;
     return (modular_result >= p ) ? modular_result - p : modular_result;
