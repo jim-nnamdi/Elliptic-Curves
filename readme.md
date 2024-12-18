@@ -8,3 +8,10 @@ The secp256k1 theorizes that a line which passes or cuts across two points on th
 
 ## Operations
 For the secp256k1 there are two points on the curve denoted as `p` and `q` and when these are added together ` p + q ` they form another point on the curve where `p ≠ q` which means they are distinct, when this operation occur, we call that point addition. where `p = (x1, y1)` and `q = (x2, y2)`.
+
+point doubling operation in an elliptic curve is done when both points on the curve are the same which is P = Q which satisfies the formula where 
+
+```shell 
+ p = (xº, yº) q = (xª, yª) 
+ x¡ = ¡2 -  xº - xª but if xº = xª then x¡ = ¡2 - 2x¡ for p = q
+```
